@@ -12,7 +12,11 @@ class PaintingsController < ApplicationController
   end
 
   def create
+
     @painting = Painting.create(params[:painting])
+    respond_to do |format|
+      format.js
+    end
   end
 
   def edit
